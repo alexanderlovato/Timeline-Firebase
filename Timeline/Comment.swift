@@ -8,21 +8,66 @@
 
 import Foundation
 
-struct Comment: Equatable {
+struct Comment: Equatable, FirebaseType {
+    
+    /*************
+     * CONSTANTS *
+     *************/
+    
+    static let kEndPoint = "comments"
+    private let kUsername = "username"
+    private let kText = "text"
+    private let kPostIdentifier = "postIdentifier"
+    
+    /**************
+     * PROPERTIES *
+     **************/
     
     let username: String
     let text: String
     let postIdentifier: String
-    var identifier: String?
     
-    init(username: String, text: String, postIdentifier: String, identifier: String? = nil) {
+    /*****************
+     * FIREBASE TYPE *
+     *****************/
+    
+    var identifier: String?
+    var endpoint: String {
+        return Comment.kEndPoint
+    }
+    
+    var jsonValue: [String : AnyObject] {
+        var jsonRepresentation = [String : AnyObject]()
+        
+        jsonRepresentation = [kUsername : username, kText : text, kPostIdentifier : postIdentifier]
+
+        return jsonRepresentation
+    }
+    
+    init?(dictionary: [String : AnyObject], identifier: String) {
+        guard let username = dictionary[kUsername] as? String, text = dictionary[kText] as? String, postIdentifier = dictionary[kPostIdentifier] as? String else { return nil }
         
         self.username = username
         self.text = text
         self.postIdentifier = postIdentifier
+        
         self.identifier = identifier
     }
     
+    /********
+     * INIT *
+     ********/
+    
+    init(username: String, text: String, postIdentifier: String) {
+        
+        self.username = username
+        self.text = text
+        self.postIdentifier = postIdentifier
+    }
+    
+    /*****************
+     * OTHER METHODS *
+     *****************/
 }
 
 func==(lhs: Comment, rhs: Comment) -> Bool {
