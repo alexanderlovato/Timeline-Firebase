@@ -57,11 +57,9 @@ struct Post: Equatable, FirebaseType {
         
         self.imageEndpoint = imageEndpoint
         self.username = username
-        
-        if let caption = dictionary[kCaption] as? String {
-            self.caption = caption
-        }
-        
+		
+		self.caption = dictionary[kCaption] as? String
+		
         if let commentDictionary = dictionary[kComments] as? [String : AnyObject] {
             self.comments = commentDictionary.flatMap({Comment(dictionary: $0.1 as! [String : AnyObject], identifier: $0.0)})
         } else {
