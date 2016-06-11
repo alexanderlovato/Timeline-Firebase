@@ -15,9 +15,9 @@ struct User: Equatable, FirebaseType {
      *************/
     
     static let kEndpoint = "users"
-    private let kUsername = "username"
-    private let kBio = "bio"
-    private let kUrl = "url"
+    private static let kUsername = "username"
+    private static let kBio = "bio"
+    private static let kUrl = "url"
     
     /**************
      * PROPERTIES *
@@ -26,7 +26,7 @@ struct User: Equatable, FirebaseType {
     let username: String
     var bio: String?
     var url: String?
-    
+	
     /*****************
      * FIREBASE TYPE *
      *****************/
@@ -39,26 +39,24 @@ struct User: Equatable, FirebaseType {
     var jsonValue: [String : AnyObject] {
         var jsonRepresentation = [String : AnyObject]()
         
-        jsonRepresentation = [kUsername : username]
+        jsonRepresentation = [User.kUsername : username]
         
         if let bio = bio, url = url {
-            jsonRepresentation[kBio] = bio
-            jsonRepresentation[kUrl] = url
+            jsonRepresentation[User.kBio] = bio
+            jsonRepresentation[User.kUrl] = url
         }
         
         return jsonRepresentation
     }
     
-    init?(dictionary: [String : AnyObject], identifier: String) {
-        guard let username = dictionary[kUsername] as? String else { return nil }
-        
-        self.username = username
-        
-        if let bio = dictionary[kBio] as? String, url = dictionary[kUrl] as? String {
-            self.bio = bio
-            self.url = url
-        }
-        
+    init?(dictionary: [String : AnyObject], identifier: String){
+        guard let username = dictionary[User.kUsername] as? String else { return nil }
+		
+        let bio = dictionary[User.kBio] as? String
+		let url = dictionary[User.kUrl] as? String
+		
+		self.init(username: username, bio: bio, url: url)
+		
         self.identifier = identifier
     }
     

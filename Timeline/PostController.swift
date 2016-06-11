@@ -64,9 +64,9 @@ class PostController {
         let comment1 = Comment(username: "Strongbad", text: "Do, dodo, do, dooo", postIdentifier: "1234")
         let comment2 = Comment(username: "DeadmouCinco", text: "Who wants to shoot them down!", postIdentifier: "3256")
         
-        let post1 = Post(imageEndPoint: sampleImageIdentifier, caption: "Just picked up a few drones!", username: "DeadmouCinco", comments: [comment1, comment2], like: [like1, like2, like3])
-        let post2 = Post(imageEndPoint: sampleImageIdentifier, caption: "Nice!")
-        let post3 = Post(imageEndPoint: sampleImageIdentifier, caption: "Who's down?")
+        let post1 = Post(imageEndpoint: sampleImageIdentifier, caption: "Just picked up a few drones!", username: "DeadmouCinco", comments: [comment1, comment2], like: [like1, like2, like3])
+        let post2 = Post(imageEndpoint: sampleImageIdentifier, caption: "Nice!")
+        let post3 = Post(imageEndpoint: sampleImageIdentifier, caption: "Who's down?")
         
         return [post1, post2, post3]
         
