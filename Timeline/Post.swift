@@ -11,20 +11,16 @@ import Foundation
 
 struct Post: Equatable, FirebaseType {
 	
-	/*************
-	* CONSTANTS *
-	*************/
+	//MARK: Constants
 	
-	static let kEndpoint = "posts"
+//	static let kEndpoint = "posts"
 	private static let kImageEndpoint = "imageEndpoint"
 	private static let kCaption = "caption"
 	private static let kUsername = "username"
 	private static let kComments = "comments"
 	private static let kLikes = "like"
 	
-	/**************
-	* PROPERTIES *
-	**************/
+	//MARK: Properties
 	
 	let imageEndpoint: String
 	let caption: String?
@@ -32,9 +28,7 @@ struct Post: Equatable, FirebaseType {
 	let comments: [Comment]
 	let likes: [Like]
 	
-	/*****************
-	* FIREBASE TYPE *
-	*****************/
+	//MARK: Firebase Type
 	
 	var identifier: String?
 	var endpoint: String {
@@ -69,7 +63,7 @@ struct Post: Equatable, FirebaseType {
 		self.identifier = identifier
 	}
 	
-	
+	//MARK: Initializers 
 	
 	
 	init(imageEndpoint: String, caption: String? = nil, username: String = "", comments: [Comment] = [], like: [Like] = []) {
@@ -80,6 +74,8 @@ struct Post: Equatable, FirebaseType {
 		self.comments = comments
 		self.likes = like
 	}
+    
+    //MARK: Other Methods
 	
 }
 

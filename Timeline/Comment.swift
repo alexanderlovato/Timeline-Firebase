@@ -10,26 +10,20 @@ import Foundation
 
 struct Comment: Equatable, FirebaseType {
     
-    /*************
-     * CONSTANTS *
-     *************/
+    //MARK: Constants
     
     static let kEndPoint = "comments"
     private let kUsername = "username"
     private let kText = "text"
     private let kPostIdentifier = "postIdentifier"
     
-    /**************
-     * PROPERTIES *
-     **************/
+    //MARK: Properties
     
     let username: String
     let text: String
     let postIdentifier: String
     
-    /*****************
-     * FIREBASE TYPE *
-     *****************/
+    //MARK: Firebase Type
     
     var identifier: String?
     var endpoint: String {
@@ -54,9 +48,7 @@ struct Comment: Equatable, FirebaseType {
         self.identifier = identifier
     }
     
-    /********
-     * INIT *
-     ********/
+    //MARK: Initializers
     
     init(username: String, text: String, postIdentifier: String) {
         
@@ -65,9 +57,7 @@ struct Comment: Equatable, FirebaseType {
         self.postIdentifier = postIdentifier
     }
     
-    /*****************
-     * OTHER METHODS *
-     *****************/
+    //MARK: Other Methods
 }
 
 func==(lhs: Comment, rhs: Comment) -> Bool {

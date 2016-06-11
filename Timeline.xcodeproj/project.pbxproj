@@ -211,10 +211,10 @@
 			isa = PBXGroup;
 			children = (
 				FA3089221D0357390005BE0A /* LoginSignupViewController.swift */,
+				FA30891D1D0355AE0005BE0A /* LoginSignupChoiceViewController.swift */,
 				FAE7FC6F1CFE812E0086F209 /* TimelineTableViewController.swift */,
 				FA30891B1D03546D0005BE0A /* AddPhotoTableViewController.swift */,
 				FA3089191D0352090005BE0A /* ProfileViewController.swift */,
-				FA30891D1D0355AE0005BE0A /* LoginSignupChoiceViewController.swift */,
 				FAE7FC711CFE82370086F209 /* PostDetailTableViewController.swift */,
 			);
 			name = ViewControllers;

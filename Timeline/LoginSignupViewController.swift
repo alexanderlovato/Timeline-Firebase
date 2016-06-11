@@ -78,9 +78,15 @@ class LoginSignupViewController: UIViewController {
                         self.dismissViewControllerAnimated(true, completion: nil)
                     }
                 })
-            default:
-                presentValidationAlertWithTitle("Missing Information", message: "Please check your information and try again.")
+            case .Signup:
+                UserController.createUser(emailTextField.text!, username: usernameTextField.text!, password: passwordTextField.text!, bio: bioTextField.text!, url: urlTextField.text!, completion: { (success, user) in
+                    if success, let _ = user {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                })
             }
+        } else {
+        presentValidationAlertWithTitle("Missing Information", message: "Please check your information and try again.")
         }
     }
     

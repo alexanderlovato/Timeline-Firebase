@@ -10,26 +10,20 @@ import Foundation
 
 struct User: Equatable, FirebaseType {
     
-    /*************
-     * CONSTANTS *
-     *************/
+    //MARK: Constants
     
     static let kEndpoint = "users"
     private static let kUsername = "username"
     private static let kBio = "bio"
     private static let kUrl = "url"
     
-    /**************
-     * PROPERTIES *
-     **************/
+    //MARK: Properties
     
     let username: String
     var bio: String?
     var url: String?
 	
-    /*****************
-     * FIREBASE TYPE *
-     *****************/
+    //MARK: Firebase Type
     
     var identifier: String?
     var endpoint: String {
@@ -60,20 +54,17 @@ struct User: Equatable, FirebaseType {
         self.identifier = identifier
     }
     
-    /********
-     * INIT *
-     ********/
+    //MARK: Initializers
     
-    init(username: String, bio: String? = nil, url: String? = nil) {
+    init(username: String, bio: String? = nil, url: String? = nil, identifier: String? = nil) {
         
         self.username = username
         self.bio = bio
         self.url = url
+        self.identifier = identifier
     }
     
-    /*****************
-     * OTHER METHODS *
-     *****************/
+    //MARK: Other Methods
     
 }
 

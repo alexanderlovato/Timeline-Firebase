@@ -10,24 +10,18 @@ import Foundation
 
 struct Like: Equatable, FirebaseType {
     
-    /*************
-     * CONSTANTS *
-     *************/
+    //MARK: Constants
     
     static let kEndpoint = "likes"
     private let kUsername = "username"
     private let kPostIdentifier = "postIdentifier"
     
-    /**************
-     * PROPERTIES *
-     **************/
+    //MARK: Properties
     
     let username: String
     let postIdentifier: String
     
-    /*****************
-     * FIREBASE TYPE *
-     *****************/
+    //MARK: Firebase Type
     
     var identifier: String?
     var endpoint: String {
@@ -52,9 +46,7 @@ struct Like: Equatable, FirebaseType {
         self.identifier = identifier
     }
     
-    /********
-     * INIT *
-     ********/
+    //MARK: Initializers
     
     
     init(username: String, postIdentifier: String) {
@@ -62,9 +54,7 @@ struct Like: Equatable, FirebaseType {
         self.postIdentifier = postIdentifier
     }
     
-    /*****************
-     * OTHER METHODS *
-     *****************/
+    //MARK: Other Methods
     
 }
 
