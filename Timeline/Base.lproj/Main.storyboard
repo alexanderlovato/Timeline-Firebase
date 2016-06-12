@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--User Search Table View Controller-->
         <scene sceneID="sp4-ws-Xt9">
             <objects>
-                <tableViewController id="vKG-VW-SqU" sceneMemberID="viewController">
+                <tableViewController id="vKG-VW-SqU" customClass="UserSearchTableViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qrD-H1-DTm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,6 +43,9 @@
                             </segments>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="modeSegmentedControl" destination="14c-7u-aF4" id="f6g-Te-yCz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIj-KL-EE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -194,22 +197,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTd-ge-ihd">
-                                <rect key="frame" x="281" y="158" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <segue destination="5Jw-CJ-llj" kind="show" identifier="toLogin" id="arm-Hb-xap"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="287-XO-bzn">
-                                <rect key="frame" x="274" y="238" width="52" height="30"/>
-                                <state key="normal" title="Sign up"/>
-                                <connections>
-                                    <segue destination="5Jw-CJ-llj" kind="show" identifier="toSignup" id="OY8-E5-wWC"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jFy-u5-HLI">
+                                <rect key="frame" x="20" y="108" width="560" height="196"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-Hc-fwL">
+                                        <rect key="frame" x="122" y="0.0" width="317" height="126"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Timeline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vE-VY-hTK">
+                                                <rect key="frame" x="12" y="0.0" width="292" height="96"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="80"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A place to share and catch up." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkg-3H-81i">
+                                                <rect key="frame" x="0.0" y="96" width="317" height="30"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8wT-fh-4V9">
+                                        <rect key="frame" x="0.0" y="136" width="560" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="287-XO-bzn">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
+                                                <state key="normal" title="Sign up"/>
+                                                <connections>
+                                                    <segue destination="5Jw-CJ-llj" kind="show" identifier="toSignup" id="OY8-E5-wWC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTd-ge-ihd">
+                                                <rect key="frame" x="280" y="0.0" width="280" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="280" id="H6Y-mT-rUa"/>
+                                                    <constraint firstAttribute="height" constant="60" id="QCb-jv-it8"/>
+                                                </constraints>
+                                                <state key="normal" title="Login"/>
+                                                <connections>
+                                                    <segue destination="5Jw-CJ-llj" kind="show" identifier="toLogin" id="arm-Hb-xap"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jFy-u5-HLI" firstAttribute="trailing" secondItem="g0a-dZ-27G" secondAttribute="trailingMargin" id="Q76-2C-2nS"/>
+                            <constraint firstItem="jFy-u5-HLI" firstAttribute="leading" secondItem="g0a-dZ-27G" secondAttribute="leadingMargin" id="c05-rK-8Fp"/>
+                            <constraint firstItem="jFy-u5-HLI" firstAttribute="top" secondItem="7vp-id-X0o" secondAttribute="bottom" constant="44" id="ex4-hA-Grs"/>
+                            <constraint firstItem="8FL-UX-nyU" firstAttribute="top" secondItem="jFy-u5-HLI" secondAttribute="bottom" priority="750" constant="267" id="lir-2v-YQ3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0lN-XN-j8Z"/>
                 </viewController>

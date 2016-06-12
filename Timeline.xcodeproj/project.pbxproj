@@ -11,8 +11,6 @@
 		01E3FC2A1BE92C7600187536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E3FC281BE92C7600187536 /* Main.storyboard */; };
 		01E3FC2C1BE92C7600187536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E3FC2B1BE92C7600187536 /* Assets.xcassets */; };
 		01E3FC2F1BE92C7600187536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E3FC2D1BE92C7600187536 /* LaunchScreen.storyboard */; };
-		01E3FC3A1BE92C7700187536 /* TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3FC391BE92C7700187536 /* TimelineTests.swift */; };
-		01E3FC451BE92C7700187536 /* TimelineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3FC441BE92C7700187536 /* TimelineUITests.swift */; };
 		FA30891A1D0352090005BE0A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3089191D0352090005BE0A /* ProfileViewController.swift */; };
 		FA30891C1D03546D0005BE0A /* AddPhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30891B1D03546D0005BE0A /* AddPhotoTableViewController.swift */; };
 		FA30891E1D0355AE0005BE0A /* LoginSignupChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30891D1D0355AE0005BE0A /* LoginSignupChoiceViewController.swift */; };
@@ -29,7 +27,8 @@
 		FA3089861D0A5E1A0005BE0A /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA30897E1D0A5E1A0005BE0A /* GoogleUtilities.framework */; };
 		FA3089881D0A5E310005BE0A /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FA3089871D0A5E310005BE0A /* libicucore.tbd */; };
 		FA30898C1D0A5EE70005BE0A /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30898B1D0A5EE70005BE0A /* FirebaseController.swift */; };
-		FA30898E1D0A600F0005BE0A /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = FA30898D1D0A600F0005BE0A /* GoogleService-Info (1).plist */; };
+		FA3089921D0CC5E20005BE0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3089911D0CC5E20005BE0A /* GoogleService-Info.plist */; };
+		FA3089941D0CD8EE0005BE0A /* UserSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3089931D0CD8EE0005BE0A /* UserSearchTableViewController.swift */; };
 		FAE7FC701CFE812E0086F209 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7FC6F1CFE812E0086F209 /* TimelineTableViewController.swift */; };
 		FAE7FC721CFE82370086F209 /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7FC711CFE82370086F209 /* PostDetailTableViewController.swift */; };
 		FAE7FC741CFE83F80086F209 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7FC731CFE83F80086F209 /* User.swift */; };
@@ -87,7 +86,8 @@
 		FA3089891D0A5E7C0005BE0A /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Firebase/Firebase.h; sourceTree = SOURCE_ROOT; };
 		FA30898A1D0A5E8A0005BE0A /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = Firebase/module.modulemap; sourceTree = SOURCE_ROOT; };
 		FA30898B1D0A5EE70005BE0A /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
-		FA30898D1D0A600F0005BE0A /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info (1).plist"; path = "Firebase/GoogleService-Info (1).plist"; sourceTree = SOURCE_ROOT; };
+		FA3089911D0CC5E20005BE0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA3089931D0CD8EE0005BE0A /* UserSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchTableViewController.swift; sourceTree = "<group>"; };
 		FAE7FC6F1CFE812E0086F209 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		FAE7FC711CFE82370086F209 /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 		FAE7FC731CFE83F80086F209 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -210,6 +210,7 @@
 		FA3089211D03560E0005BE0A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA3089931D0CD8EE0005BE0A /* UserSearchTableViewController.swift */,
 				FA3089221D0357390005BE0A /* LoginSignupViewController.swift */,
 				FA30891D1D0355AE0005BE0A /* LoginSignupChoiceViewController.swift */,
 				FAE7FC6F1CFE812E0086F209 /* TimelineTableViewController.swift */,
@@ -223,7 +224,7 @@
 		FA3089761D0A5D610005BE0A /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				FA30898D1D0A600F0005BE0A /* GoogleService-Info (1).plist */,
+				FA3089911D0CC5E20005BE0A /* GoogleService-Info.plist */,
 				FA30898A1D0A5E8A0005BE0A /* module.modulemap */,
 				FA3089891D0A5E7C0005BE0A /* Firebase.h */,
 				FA3089871D0A5E310005BE0A /* libicucore.tbd */,
@@ -344,9 +345,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				01E3FC2F1BE92C7600187536 /* LaunchScreen.storyboard in Resources */,
+				FA3089921D0CC5E20005BE0A /* GoogleService-Info.plist in Resources */,
 				01E3FC2C1BE92C7600187536 /* Assets.xcassets in Resources */,
 				01E3FC2A1BE92C7600187536 /* Main.storyboard in Resources */,
-				FA30898E1D0A600F0005BE0A /* GoogleService-Info (1).plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +382,7 @@
 				FAE7FC701CFE812E0086F209 /* TimelineTableViewController.swift in Sources */,
 				FA3089271D06939D0005BE0A /* ImageController.swift in Sources */,
 				01E3FC251BE92C7600187536 /* AppDelegate.swift in Sources */,
+				FA3089941D0CD8EE0005BE0A /* UserSearchTableViewController.swift in Sources */,
 				FA30891E1D0355AE0005BE0A /* LoginSignupChoiceViewController.swift in Sources */,
 				FA3089251D0522CF0005BE0A /* PostController.swift in Sources */,
 				FA30891A1D0352090005BE0A /* ProfileViewController.swift in Sources */,
@@ -393,7 +395,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01E3FC3A1BE92C7700187536 /* TimelineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +402,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01E3FC451BE92C7700187536 /* TimelineUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +533,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.devmounta.Timeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Debug;
 		};
@@ -549,7 +549,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.devmounta.Timeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Release;
 		};
