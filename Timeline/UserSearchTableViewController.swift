@@ -11,12 +11,15 @@ import UIKit
 class UserSearchTableViewController: UITableViewController {
     
     enum ViewMode: Int {
-        case Friends
-        case All
+        case Friends = 0
+        case All = 1
     }
     
-    var mode = ViewMode {
-        
+    var mode: ViewMode {
+        get {
+            return ViewMode(rawValue: modeSegmentedControl.selectedSegmentIndex)!
+            
+        }
     }
     
     var usersDataSource: [User] = []

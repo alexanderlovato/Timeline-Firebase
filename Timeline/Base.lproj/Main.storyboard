@@ -197,22 +197,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jFy-u5-HLI">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jFy-u5-HLI">
                                 <rect key="frame" x="20" y="108" width="560" height="196"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-Hc-fwL">
-                                        <rect key="frame" x="122" y="0.0" width="317" height="126"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="126"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Timeline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vE-VY-hTK">
-                                                <rect key="frame" x="12" y="0.0" width="292" height="96"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timeline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vE-VY-hTK">
+                                                <rect key="frame" x="134" y="0.0" width="292" height="96"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="80"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A place to share and catch up." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkg-3H-81i">
-                                                <rect key="frame" x="0.0" y="96" width="317" height="30"/>
+                                                <rect key="frame" x="122" y="96" width="317" height="30"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -229,16 +229,15 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTd-ge-ihd">
                                                 <rect key="frame" x="280" y="0.0" width="280" height="60"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="280" id="H6Y-mT-rUa"/>
-                                                    <constraint firstAttribute="height" constant="60" id="QCb-jv-it8"/>
-                                                </constraints>
                                                 <state key="normal" title="Login"/>
                                                 <connections>
                                                     <segue destination="5Jw-CJ-llj" kind="show" identifier="toLogin" id="arm-Hb-xap"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="jPP-EA-aKJ"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -248,7 +247,7 @@
                             <constraint firstItem="jFy-u5-HLI" firstAttribute="trailing" secondItem="g0a-dZ-27G" secondAttribute="trailingMargin" id="Q76-2C-2nS"/>
                             <constraint firstItem="jFy-u5-HLI" firstAttribute="leading" secondItem="g0a-dZ-27G" secondAttribute="leadingMargin" id="c05-rK-8Fp"/>
                             <constraint firstItem="jFy-u5-HLI" firstAttribute="top" secondItem="7vp-id-X0o" secondAttribute="bottom" constant="44" id="ex4-hA-Grs"/>
-                            <constraint firstItem="8FL-UX-nyU" firstAttribute="top" secondItem="jFy-u5-HLI" secondAttribute="bottom" priority="750" constant="267" id="lir-2v-YQ3"/>
+                            <constraint firstItem="8FL-UX-nyU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jFy-u5-HLI" secondAttribute="bottom" priority="750" constant="225" id="lir-2v-YQ3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0lN-XN-j8Z"/>
